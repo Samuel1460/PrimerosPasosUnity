@@ -3,33 +3,33 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
-    public float altura = 1.82f;
-    public int edad = 30;
-    public string nombre = "Roberto";
-    public bool puedeVotar = true;
+    [SerializeField] private float _force = 5f;
+    [SerializeField] private float _speed = 5f;
+    [SerializeField] private Rigidbody2D _rigidbody2D;
 
-    public GameObject gameObject;
-    public Rigidbody2D rigidbody2D;
-    public Collider2D collider2D;
-    public SpriteRenderer spriteRenderer;
-    public Transform Transform;
 
    
 
 
     private void Start()
     {
-        Debug.Log(" Hola : " + nombre + " tu edad es : " + edad + " tu altura es: " + altura);
-        rigidbody2D.simulated = false; 
-        spriteRenderer.color = Color.red;
-        transform.position = new Vector3(10f, 0f, 0f );
+        _rigidbody2D = GetComponent<Rigidbody2D>();
 
-        
+
     }
 
     private void Update()
     {
-        
+        if(Input.GetKey(KeyCode.Space))
+
+        {
+            _rigidbody2D.AddForce(Vector2.up * _force);
+     
+        }
+        _rigidbody2D.velocity = Vector2.right * _speed; 
+
+
+
     }
 
 
