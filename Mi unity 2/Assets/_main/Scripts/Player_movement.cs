@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
-    [SerializeField] private float _force = 5f;
-    [SerializeField] private float _speed = 5f;
+    [SerializeField] private float _jumpForce = 12f;
+    [SerializeField] private float _speed = 8f;
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private GroundCheck _groundCheck;
 
@@ -21,7 +21,7 @@ public class Player_Movement : MonoBehaviour
             if(Input.GetKey(KeyCode.Space))
             {
 
-                _rigidbody2D.AddForce(Vector2.up * _force);
+                _rigidbody2D.AddForce(Vector2.up * _jumpForce,ForceMode2D.Force);
                 Debug.Log("Oprimi la tecla");
 
             }

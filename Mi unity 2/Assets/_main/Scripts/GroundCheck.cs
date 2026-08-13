@@ -8,12 +8,12 @@ public class GroundCheck : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         isGround = true;
-        Debug.Log("Me tocaron !!");
+        Debug.Log("Toco El Suelo");
     }
     private void OnTriggerExit2D(Collider2D collision) 
     {
         isGround = false;
-        Debug.Log("Me Dejaron de tocar!!"); 
+        Debug.Log("Estoy Saltando"); 
     }
   
 }
