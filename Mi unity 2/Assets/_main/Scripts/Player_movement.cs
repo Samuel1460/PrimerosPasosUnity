@@ -4,7 +4,7 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour
 {
     [SerializeField] private float _jumpForce = 12f;
-    [SerializeField] private float _speed = 8f;
+    [SerializeField] private float _movementSpeed = 8f;
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private GroundCheck _groundCheck;
 
@@ -21,13 +21,13 @@ public class Player_Movement : MonoBehaviour
             if(Input.GetKey(KeyCode.Space))
             {
 
-                _rigidbody2D.AddForce(Vector2.up * _jumpForce,ForceMode2D.Force);
+                _rigidbody2D.AddForce(Vector2.up * _jumpForce,ForceMode2D.Force);  // Topo de fuerza de impulso
                 Debug.Log("Oprimi la tecla");
 
             }
 
         }
-        _rigidbody2D.velocity = Vector2.right * _speed;
+        _rigidbody2D.velocity = new Vector2(1 * _movementSpeed, _rigidbody2D.velocity.y);
     }
 
 
